@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>A Basic HTML5 Template</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>Choisir l'heure d'hibernation et l'heure de réveil</h1>
+		</header>
+
+		<main>
+			<section>
+				<form action="process.html">
+					<label>
+						Heure d'hibernation
+					</label>
+
+					<select name="hibernation">
+						<option value="-1h">désactiver</option>
+						<option value="22h">22h</option>
+						<option value="23h">23h</option>
+						<option value="01h">1h</option>
+						<option value="02h">2h</option>
+						<option value="03h">3h</option>
+						<option value="04h">4h</option>
+						<option value="05h">5h</option>
+						<option value="06h">6h</option>
+						<option value="07h">7h</option>
+						<option value="08h">8h</option>
+						<option value="09h">9h</option>
+					</select>
+
+					<label>
+						Heure de réveil
+					</label>
+
+					<select name="reveil">
+						<option value="-1h">désactiver</option>
+						<option value="01h">1h</option>
+						<option value="02h">2h</option>
+						<option value="03h">3h</option>
+						<option value="04h">4h</option>
+						<option value="05h">5h</option>
+						<option value="06h">6h</option>
+						<option value="07h">7h</option>
+						<option value="08h">8h</option>
+						<option value="09h">9h</option>
+						<option value="10h">10h</option>
+					</select>
+
+					<input type="submit" value="envoyer"></input>
+				</form>
+			</section>
+
+			<section id="settime"></section>
+		</main>
+
+		<script src="script.js"></script>
+
+	</body>
+</html>
+
