@@ -52,7 +52,8 @@ std::string WebServer::getContent(std::string &url, std::string &type, char *buf
 
 			std::cout << tmp_startTime << " " << tmp_endTime << "\n";
 
-			if (tmp_startTime >= tmp_endTime) {
+			if (tmp_startTime < 12 && tmp_startTime >= tmp_endTime
+			 || tmp_startTime > 12 && tmp_startTime <= tmp_endTime) {
 				content = open_file("incorrect.html");
 			} else {
 				startTime = tmp_startTime;
@@ -110,6 +111,9 @@ void WebServer::start(bool activeAsync) {
 		if (status == 2) {
 			if (timeinfo->tm_hour == startTime) {
 				status = 1;
+				if (startTime > endTime) {
+					startTime -= 24;
+				}
 				std::string cseconds = std::to_string((endTime - startTime)*3600);
 				execlp("/usr/sbin/rtcwake", "-m", "disk", "-s", cseconds.c_str(), nullptr);
 			}
